@@ -1,0 +1,376 @@
+
+/*google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0;
+  padding:0;
+  scroll-padding-top: 2rem;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* Color variables */
+:root{--main-color:#fd4646;
+  --text-color:#171427;
+  --bg-color:#fff;
+}
+
+/* Image styles */
+img { width: 100%; }
+
+/* Body styles */
+body { color:var(--text-color); 
+  overflow-x: hidden;
+}
+
+/*container styles*/
+.container{  max-width: 1068px;
+   margin: auto;
+  width: 100%; }
+
+  /*secondary container styles*/
+.container2 {
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+/* Icon container styles */
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+/*header styles*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--bg-color);
+  box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+  z-index: 100;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:20px;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+/* Navigation links styles */
+nav ul li a {
+  font-weight: 200;
+  text-decoration: none;
+  color: var(--text-color);
+  padding:14px 16px;
+  display: inline-block;
+}
+
+/* Navigation links hover styles */
+li a:hover, .dropdown:hover .dropbtn {
+  background-color:rgba(128, 128, 128, 0.722);
+}
+
+/* Dropdown styles */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Dropdown item styles */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Dropdown item hover styles */
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+
+/* Display dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Contact and Payment info popup styles */
+#contact-info,
+#payment-info {
+  display: none;
+  position: fixed;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  z-index: 9999;
+  height: 700px;
+}
+/* Input field styles */
+  input {
+    width: 100%;
+    padding: 10px 18px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  /* Submit button styles */
+input[type=submit] {
+  width: 100%;
+  background-color: #074b2b;
+  color: var(--bg-color);
+  padding: 12px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* Submit button hover styles */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+/* Logo styles */
+.logo {  
+  font-weight:bold;
+  color:red; }
+
+  /* Cart icon styles */
+.cart-icon { 
+  font-size: 1.9rem;
+  cursor:pointer;}
+
+  /* Cart container styles */
+  .cart-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 500px;
+    min-height: 100vh;
+    height: 500px;
+    padding: 20px;
+    background: var(--bg-color);
+    box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+    transition: 0.3s;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    border-radius: 6px;
+    overflow: auto;
+  }
+
+  #empty-cart-message {
+    display: none;
+  }
+  
+  /* Cart count badge styles */
+  #cart-count {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    padding: 3px 5px;
+    border-radius: 50%;
+    font-size: small;
+  }
+/* Active cart styles */
+.cart.active{
+  right: 0;}
+
+/* Cart item image styles */
+.cart-img{
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+/* Cart item box styles */
+.cart-box{
+  display: grid;
+  grid-template-columns: 150px 150px ;
+  row-gap: 0.5rem;
+align-items: center; }
+
+/* Quantity input styles */
+.quantity {
+  width: 50px;
+}
+
+/* Cart quantity styles */
+.cart-quantity{
+  border: 1px solid var(--text-color);
+  outline-color: var(--main-color);
+  width: 2.4rem;
+ }
+ 
+/* Trash icon styles */
+  .bx bxs-trash{
+    font-size: 50px;
+    color: var(--main-color);
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  /* Buy button styles */
+  .btn-buy {
+    display: flex;
+    background:rgba(255, 149, 0, 0.934);
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Buy button hover styles */
+.btn-buy:hover{
+  background: green;
+}
+
+/* Close cart button styles */
+#close-cart,
+#close-form {
+  position: absolute;
+  top: 1rem;
+  right: 0.8rem;
+  font-size: 2rem;
+  cursor: pointer;}
+
+  /* Section styles */
+section {
+  padding: 2rem 0 3rem;}
+
+  /* Section title styles */
+.section-title{
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 1.5rem;}
+
+/*shop styles*/
+.shop {
+  margin-top: 2rem;}
+
+/*shop content*/
+.shop-content { 
+  display:grid;
+  padding: 50px;
+  gap: 30px;
+  }
+  /*product box style*/
+  .product-box{
+    position: relative;
+  }
+/*product-box hover style*/
+.product-box:hover{
+  padding: 10px;
+  border:1px solid var(--text-color);
+}
+
+/* Product image styles */
+.product-img{
+  width: 600px;
+  height: 500px;
+  margin: 70px;
+}
+
+/* Product title styles */
+.product-title{
+  font-size:1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+} 
+/* add to cart styles*/
+.add-cart{
+  position: relative;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 149, 0, 0.934);
+  color: var(--bg-color);
+  padding: 10pt;
+  cursor: pointer;
+}
+/*add-cart hover style*/
+.add-cart:hover{
+  color:var(--text-color);
+}
+
+/*total price styles*/
+.total{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px 0pt;
+  border-top: 1px solid var(--text-color);
+  border-top: 1px solid var(--text-color);
+}
+/*trash icon style*/
+.custom-trash-icon{
+  cursor: pointer;
+  font-size: 25px;
+} /*custom trash icon hover styles*/
+.custom-trash-icon:hover{
+  color: #fd4646;
+}
+/* Styles for the row container */
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+/* Styles for a column that occupies 50% of the container */
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;}
+
+  /* Styles for a column that occupies 75% of the container */
+  .col-75 {
+    -ms-flex: 75%; /* IE10 */
+    flex: 75%;
+  }
+/* Shared styles for both 75% and 50% width columns */
+  .col-75,
+  .col-50 {
+  padding: 0 16px;
+}
+/* Styles for the 'Continue' button with the ID 'continue-btn' */
+#continue-btn{
+  background-color: #04AA6D;
+  color: var(--bg-color);
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+/* Styles for the 'Continue' button when hovered */
+#continue-btn:hover{
+    background-color: #ddd;
+    color: black;
+  }
+  
